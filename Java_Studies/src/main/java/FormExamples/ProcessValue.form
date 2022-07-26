@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="processButton" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="degerLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="degerField" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rakamlariToplaJRB" min="-2" max="-2" attributes="0"/>
+                          <Component id="bolenleriListeleJRB" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="aBulJRB" min="-2" max="-2" attributes="0"/>
+                          <Component id="tersCevirJRB" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="sonucLabel" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="tersCevirJRB" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="aBulJRB" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="degerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="degerField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rakamlariToplaJRB" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bolenleriListeleJRB" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="processButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="sonucLabel" pref="18" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="degerLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="De&#x11f;er: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="degerField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="sonucLabel">
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="processButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Process"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="processButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rakamlariToplaJRB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rakamlar&#x131; topla"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="bolenleriListeleJRB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="B&#xf6;lenleri listele"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="tersCevirJRB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ters &#xe7;evir"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="aBulJRB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&apos;a&apos; karakter say&#x131;s&#x131;n&#x131; bul"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

@@ -285,63 +285,61 @@ public class HesapMakinesi extends javax.swing.JFrame {
 
     private void birButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birButtonActionPerformed
         inputField.setText(inputField.getText()+"1");
-    }//GEN-LAST:event_birButtonActionPerformed
+    }
 
     private void ikiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ikiButtonActionPerformed
         inputField.setText(inputField.getText()+"2");
-    }//GEN-LAST:event_ikiButtonActionPerformed
+    }
 
     private void ucButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ucButtonActionPerformed
         inputField.setText(inputField.getText()+"3");
-    }//GEN-LAST:event_ucButtonActionPerformed
+    }
 
     private void dortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dortButtonActionPerformed
         inputField.setText(inputField.getText()+"4");
-    }//GEN-LAST:event_dortButtonActionPerformed
+    }
 
     private void besButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_besButtonActionPerformed
         inputField.setText(inputField.getText()+"5");
-    }//GEN-LAST:event_besButtonActionPerformed
+    }
 
     private void altiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altiButtonActionPerformed
         inputField.setText(inputField.getText()+"6");
-    }//GEN-LAST:event_altiButtonActionPerformed
+    }
 
     private void yediButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yediButtonActionPerformed
         inputField.setText(inputField.getText()+"7");
-    }//GEN-LAST:event_yediButtonActionPerformed
+    }
 
     private void sekizButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sekizButtonActionPerformed
         inputField.setText(inputField.getText()+"8");
-    }//GEN-LAST:event_sekizButtonActionPerformed
+    }
 
     private void dokuzButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dokuzButtonActionPerformed
         inputField.setText(inputField.getText()+"9");
-    }//GEN-LAST:event_dokuzButtonActionPerformed
+    }
 
     private void sifirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sifirButtonActionPerformed
         if(inputField.getText().equals("")){
             if (String.valueOf(inputField.getText().charAt(inputField.getText().length()-1)).equals("0")) return;
         }
         else inputField.setText(inputField.getText()+"0");
-    }//GEN-LAST:event_sifirButtonActionPerformed
-
+    }
     private void noktaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noktaButtonActionPerformed
         if (inputField.getText().equals("")) inputField.setText("0.");
         else if (String.valueOf(inputField.getText().charAt(inputField.getText().length()-1)).equals(".")) return;
         else inputField.setText(inputField.getText()+".");  
-    }//GEN-LAST:event_noktaButtonActionPerformed
-
+    }
     private void temizleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temizleButtonActionPerformed
         inputField.setText("");
-    }//GEN-LAST:event_temizleButtonActionPerformed
+    }
 
     private void silButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_silButtonActionPerformed
         String input=inputField.getText();
         String newString="";
         for (int i = 0; i < input.length()-1; i++) newString+=input.charAt(i);      
         inputField.setText(newString);
-    }//GEN-LAST:event_silButtonActionPerformed
+    }
     
     private void toplaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toplaButtonActionPerformed
         if (inputField.getText().equals("")) return;
@@ -351,7 +349,7 @@ public class HesapMakinesi extends javax.swing.JFrame {
             inputField.setText(inputField.getText()+"+");
             islemlerPasif();
         }       
-    }//GEN-LAST:event_toplaButtonActionPerformed
+    }
 
     private void cikarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cikarButtonActionPerformed
         if (inputField.getText().equals("")) return;
@@ -361,7 +359,7 @@ public class HesapMakinesi extends javax.swing.JFrame {
             inputField.setText(inputField.getText()+"-");
             islemlerPasif();
         }
-    }//GEN-LAST:event_cikarButtonActionPerformed
+    }
 
     private void carpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carpButtonActionPerformed
         if (inputField.getText().equals("")) return;
@@ -371,7 +369,7 @@ public class HesapMakinesi extends javax.swing.JFrame {
             inputField.setText(inputField.getText()+"*");
             islemlerPasif();
         }
-    }//GEN-LAST:event_carpButtonActionPerformed
+    }
 
     private void bolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolButtonActionPerformed
         if (inputField.getText().equals("")) return;
@@ -381,7 +379,7 @@ public class HesapMakinesi extends javax.swing.JFrame {
             inputField.setText(inputField.getText()+"/");
             islemlerPasif();
         }
-    }//GEN-LAST:event_bolButtonActionPerformed
+    }
 
     private void modButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modButtonActionPerformed
         if (inputField.getText().equals("")) return;
@@ -391,7 +389,7 @@ public class HesapMakinesi extends javax.swing.JFrame {
             inputField.setText(inputField.getText()+"%");
             islemlerPasif();
         }
-    }//GEN-LAST:event_modButtonActionPerformed
+    }
 
     private void esitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esitButtonActionPerformed
         islemlerAktif();
@@ -433,12 +431,9 @@ public class HesapMakinesi extends javax.swing.JFrame {
                 default:
                     throw new AssertionError();
             }
-//            double sayi1=Double.parseDouble(arr[0]);
-//            double sayi2=Double.parseDouble(arr[1]);
-//            System.out.println(String.valueOf(sayi1)+String.valueOf(sayi2)+String.valueOf(islem));
         }
         
-    }//GEN-LAST:event_esitButtonActionPerformed
+    }
 
     private void islemlerPasif(){
         toplaButton.setEnabled(false);

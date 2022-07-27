@@ -407,16 +407,21 @@ public class OgrenciBilgiEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_guncelleButtonActionPerformed
 
     private void ogrenciTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ogrenciTableMouseClicked
+        //Tabloda secilen ogrencinin ogrenci numarasi "Ogrenci No"
+        //kutucuguna otomatik yerlestirilir.
         int selectedRow=ogrenciTable.getSelectedRow();
         DefaultTableModel dtm=(DefaultTableModel)ogrenciTable.getModel();
         ogrenciNoField.setText((String)dtm.getValueAt(selectedRow, 0));
     }//GEN-LAST:event_ogrenciTableMouseClicked
 
     private void bolumEkleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolumEkleButtonActionPerformed
+        //Klavyeden girilen yeni bolum adi bilgisi alinir ve 
+        //agacta secili olan program turu tespit edilir.
         String bolumStr=bolumField.getText();
         String seciliProgramTuru=programTree.getSelectionModel().getSelectionPath().toString().split(",")[1];
         seciliProgramTuru=seciliProgramTuru.substring(1,seciliProgramTuru.length()-1);
-        
+        //Tespit edilen program turunun altinda klavyeden girilen isim ile
+        //yeni node olusturulur. Yeni program icin uygun formatta kod atamasi yapilir.
         for (int i = 0; i < programTurleri.size(); i++) {
             if (programTurleri.get(i).toString().equals(seciliProgramTuru)) {
                 DefaultTreeModel model = (DefaultTreeModel) programTree.getModel();
@@ -431,12 +436,15 @@ public class OgrenciBilgiEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_bolumEkleButtonActionPerformed
 
     private void bolumGuncelleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolumGuncelleButtonActionPerformed
+        //Klavyeden girilen yeni bolum adi bilgisi alinir ve 
+        //Agacta secili olan node'un kendisi ve atasi tespit edilip String'e cevrilir.
         String bolumStr=bolumField.getText();
         String seciliProgram=programTree.getSelectionModel().getSelectionPath().toString().split(",")[2];
         String seciliProgramTuru=programTree.getSelectionModel().getSelectionPath().toString().split(",")[1];
         seciliProgram=seciliProgram.substring(1,seciliProgram.length()-1);
         seciliProgramTuru=seciliProgramTuru.substring(1,seciliProgramTuru.length());
-        
+        //Kendisi ve atasi tespit edilen node'un object bilgisi ArrayList'lerden alinir.
+        //Ve node kaldirilir ardindan klavyeden girilen yeni bilgi ile yeni node olusturulur.
         for (int i = 0; i < programTurleri.size(); i++) {
             if (programTurleri.get(i).toString().equals(seciliProgramTuru)) {
                 for (int j = 0; j < programlar.get(i).size(); j++) {                    
@@ -453,11 +461,13 @@ public class OgrenciBilgiEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_bolumGuncelleButtonActionPerformed
 
     private void bolumSilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bolumSilButtonActionPerformed
+        //Agacta secili olan node'un kendisi ve atasi tespit edilip String'e cevrilir.
         String seciliProgram=programTree.getSelectionModel().getSelectionPath().toString().split(",")[2];
         String seciliProgramTuru=programTree.getSelectionModel().getSelectionPath().toString().split(",")[1];
         seciliProgram=seciliProgram.substring(1,seciliProgram.length()-1);
         seciliProgramTuru=seciliProgramTuru.substring(1,seciliProgramTuru.length());
-        
+        //Kendisi ve atasi tespit edilen node'un object bilgisi ArrayList'lerden alinir.
+        //Ve kaldirma islemi gerceklestirilir.
         for (int i = 0; i < programTurleri.size(); i++) {
             if (programTurleri.get(i).toString().equals(seciliProgramTuru)) {
                 for (int j = 0; j < programlar.get(i).size(); j++) {                  

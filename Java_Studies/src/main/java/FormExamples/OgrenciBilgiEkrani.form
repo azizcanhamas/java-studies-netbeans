@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="&#xd6;&#x11f;renci Bilgi Ekran&#x131;"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="adLabel" max="32767" attributes="0"/>
+                                  <Component id="adresLabel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ogrenciNoLabel" pref="66" max="32767" attributes="0"/>
+                                  <Component id="soyadLabel" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="adField" max="32767" attributes="0"/>
+                                  <Component id="ogrenciNoField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="soyadField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="sehirCB" alignment="0" pref="246" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="yeniButton" max="32767" attributes="0"/>
+                                  <Component id="guncelleButton" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="hepsiniSilButton" pref="121" max="32767" attributes="0"/>
+                                  <Component id="silButton" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="203" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bolumField" max="32767" attributes="0"/>
+                          <Component id="bolumEkleButton" max="32767" attributes="0"/>
+                          <Component id="bolumGuncelleButton" alignment="0" pref="222" max="32767" attributes="0"/>
+                          <Component id="bolumSilButton" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jScrollPane2" pref="761" max="32767" attributes="0"/>
+                          <Component id="infoLabel" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Component id="bolumField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="bolumEkleButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bolumGuncelleButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bolumSilButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ogrenciNoLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="ogrenciNoField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="adLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="adField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="soyadLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="soyadField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="adresLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sehirCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="yeniButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="silButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="hepsiniSilButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="guncelleButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jScrollPane1" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="179" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Component id="infoLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="ogrenciNoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xd6;&#x11f;renci No:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="adLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ad&#x131;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="soyadLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Soyad&#x131;:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="adresLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adresi:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ogrenciNoField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="adField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="soyadField">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="sehirCB">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="81">
+            <StringItem index="0" value="Adana"/>
+            <StringItem index="1" value="Ad&#x131;yaman"/>
+            <StringItem index="2" value="Afyonkarahisar"/>
+            <StringItem index="3" value="A&#x11f;r&#x131;"/>
+            <StringItem index="4" value="Aksaray"/>
+            <StringItem index="5" value="Amasya"/>
+            <StringItem index="6" value="Ankara"/>
+            <StringItem index="7" value="Antalya"/>
+            <StringItem index="8" value="Ardahan"/>
+            <StringItem index="9" value="Artvin"/>
+            <StringItem index="10" value="Ayd&#x131;n"/>
+            <StringItem index="11" value="Bal&#x131;kesir"/>
+            <StringItem index="12" value="Bart&#x131;n"/>
+            <StringItem index="13" value="Batman"/>
+            <StringItem index="14" value="Bayburt"/>
+            <StringItem index="15" value="Bilecik"/>
+            <StringItem index="16" value="Bing&#xf6;l"/>
+            <StringItem index="17" value="Bitlis"/>
+            <StringItem index="18" value="Bolu"/>
+            <StringItem index="19" value="Burdur"/>
+            <StringItem index="20" value="Bursa"/>
+            <StringItem index="21" value="&#xc7;anakkale"/>
+            <StringItem index="22" value="&#xc7;ank&#x131;r&#x131;"/>
+            <StringItem index="23" value="&#xc7;orum"/>
+            <StringItem index="24" value="Denizli"/>
+            <StringItem index="25" value="Diyarbak&#x131;r"/>
+            <StringItem index="26" value="D&#xfc;zce"/>
+            <StringItem index="27" value="Edirne"/>
+            <StringItem index="28" value="Elaz&#x131;&#x11f;"/>
+            <StringItem index="29" value="Erzincan"/>
+            <StringItem index="30" value="Erzurum"/>
+            <StringItem index="31" value="Eski&#x15f;ehir"/>
+            <StringItem index="32" value="Gaziantep"/>
+            <StringItem index="33" value="Giresun"/>
+            <StringItem index="34" value="G&#xfc;m&#xfc;&#x15f;hane"/>
+            <StringItem index="35" value="Hakk&#xe2;ri"/>
+            <StringItem index="36" value="Hatay"/>
+            <StringItem index="37" value="I&#x11f;d&#x131;r"/>
+            <StringItem index="38" value="Isparta"/>
+            <StringItem index="39" value="&#x130;stanbul"/>
+            <StringItem index="40" value="&#x130;zmir"/>
+            <StringItem index="41" value="Kahramanmara&#x15f;"/>
+            <StringItem index="42" value="Karab&#xfc;k"/>
+            <StringItem index="43" value="Karaman"/>
+            <StringItem index="44" value="Kars"/>
+            <StringItem index="45" value="Kastamonu"/>
+            <StringItem index="46" value="Kayseri"/>
+            <StringItem index="47" value="Kilis"/>
+            <StringItem index="48" value="K&#x131;r&#x131;kkale"/>
+            <StringItem index="49" value="K&#x131;rklareli"/>
+            <StringItem index="50" value="K&#x131;r&#x15f;ehir"/>
+            <StringItem index="51" value="Kocaeli"/>
+            <StringItem index="52" value="Konya"/>
+            <StringItem index="53" value="K&#xfc;tahya"/>
+            <StringItem index="54" value="Malatya"/>
+            <StringItem index="55" value="Manisa"/>
+            <StringItem index="56" value="Mardin"/>
+            <StringItem index="57" value="Mersin"/>
+            <StringItem index="58" value="Mu&#x11f;la"/>
+            <StringItem index="59" value="Mu&#x15f;"/>
+            <StringItem index="60" value="Nev&#x15f;ehir"/>
+            <StringItem index="61" value="Ni&#x11f;de"/>
+            <StringItem index="62" value="Ordu"/>
+            <StringItem index="63" value="Osmaniye"/>
+            <StringItem index="64" value="Rize"/>
+            <StringItem index="65" value="Sakarya"/>
+            <StringItem index="66" value="Samsun"/>
+            <StringItem index="67" value="&#x15e;anl&#x131;urfa"/>
+            <StringItem index="68" value="Siirt"/>
+            <StringItem index="69" value="Sinop"/>
+            <StringItem index="70" value="Sivas"/>
+            <StringItem index="71" value="&#x15e;&#x131;rnak"/>
+            <StringItem index="72" value="Tekirda&#x11f;"/>
+            <StringItem index="73" value="Tokat"/>
+            <StringItem index="74" value="Trabzon"/>
+            <StringItem index="75" value="Tunceli"/>
+            <StringItem index="76" value="U&#x15f;ak"/>
+            <StringItem index="77" value="Van"/>
+            <StringItem index="78" value="Yalova"/>
+            <StringItem index="79" value="Yozgat"/>
+            <StringItem index="80" value="Zonguldak"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="yeniButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Yeni"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yeniButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="guncelleButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="G&#xfc;ncelle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guncelleButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="silButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sil"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="silButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="hepsiniSilButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hepsini Sil"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hepsiniSilButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTree" name="programTree">
+          <Properties>
+            <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
+              <TreeModel code="Programlar&#xa; Teknik&#xa;  Bilgisayar&#xa;  Elektrik&#xa;  Elektronik&#xa;  &#x130;n&#x15f;aat&#xa; Sosyal&#xa;  Muhasebe&#xa;  Pazarlama&#xa;  Lojistik&#xa;  Harita&#xa; M&#xfc;hendislik&#xa;  Bilgisayar M&#xfc;h.&#xa;  Elektrik-Elektronik M&#xfc;h.&#xa;  Mekatronik M&#xfc;h.&#xa;  Jeoloji M&#xfc;h.&#xa;  Kimya M&#xfc;h.&#xa;  &#x130;n&#x15f;aat M&#xfc;h.&#xa; G&#xf6;rsel-&#x130;&#x15f;itsel&#xa;   M&#xfc;zik&#xa;   Resim&#xa;   Heykeltra&#x15f;l&#x131;k&#xa;   Tiyatro&#xa;   Bale&#xa;   Dans"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JTextField" name="bolumField">
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="bolumEkleButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="B&#xf6;l&#xfc;m Ekle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolumEkleButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="bolumGuncelleButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="B&#xf6;l&#xfc;m G&#xfc;ncelle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolumGuncelleButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="bolumSilButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="B&#xf6;l&#xfc;m Sil"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bolumSilButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="ogrenciTable">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="6" rowCount="0">
+                <Column editable="true" title="&#xd6;&#x11f;renci No" type="java.lang.Object"/>
+                <Column editable="true" title="Ad" type="java.lang.Object"/>
+                <Column editable="true" title="Soyad" type="java.lang.Object"/>
+                <Column editable="true" title="Program T&#xfc;r&#xfc;" type="java.lang.Object"/>
+                <Column editable="true" title="Program" type="java.lang.Object"/>
+                <Column editable="true" title="Adres" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ogrenciTableMouseClicked"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="infoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Info:"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

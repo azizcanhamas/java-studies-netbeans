@@ -1,0 +1,28 @@
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!--
+    
+    getParameterNames(): request ile birlikte gonderilen tum parametrelerin
+    degisken isimlerini Enumeration tipinde dondurur.
+    
+    -->
+    
+    <form action="display.jsp" method="post" >
+            Ad&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="ad"/><br><br>
+            Soyad&nbsp&nbsp<input type="text" name="soyad"/><br><br>
+            Cinsiyet <input name="cinsiyet" type="radio" value="Erkek" checked="checked"/>Erkek
+            <input type="radio" value="Kadin" checked="checked" name="cinsiyet"/>Kadin<br><br>
+            <input type="checkbox" value="Paten" name="hobi"/>Basketbol<br>
+            <input type="checkbox" value="Paten" name="hobi"/>Futbol<br>
+            <input type="checkbox" value="Paten" name="hobi"/>Kayak<br><br>
+            <input type="submit" name="gonder" value="Gonder"/>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+CREATE DATABASE dersler
+CREATE TABLE notlar(id INT PRIMARY KEY AUTO_INCREMENT,ad VARCHAR(50) NOT NULL,soyad VARCHAR(50) NOT NULL,dersad VARCHAR(50) NULL, vize INT NULL, final INT NULL)
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Emir','Arık','Algoritma ve Programlama-1',45,69);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Yağız','Arıkan','Mikroişlemciler',65,75);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Ege','Arslanoğlu','Sayısal Tasarım',85,48);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Çağan ','Atakan','Benzetim ve Modelleme',25,52);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Sarp','Beşikçi','Benzetim ve Modelleme',36,63);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Kerem','Bilgen','Algoritma ve Programlama-1',47,74);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Deniz','Bolatlı','Mikroişlemciler',59,12);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Kağan ','Boz','Sayısal Tasarım',68,98);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Mert ','Budak','Makine Öğrenmesi',74,62);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Görkem','Caymaz','Makine Öğrenmesi',12,74);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Burak','Cebe','Sayısal Tasarım',39,15);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Meriç','Ceyhan','Yapay Zeka',74,32);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Berke','Bektaş','Algoritma ve Programlama-1',58,23);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Efe ','Çiftçi','Benzetim ve Modelleme',24,31);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Doruk','Aras','Mikroişlemciler',14,6);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Bartu','Alpman','Algoritma ve Programlama-1',10,20);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Emirhan','Bakırcıoğlu','Makine Öğrenmesi',96,30);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Alp','Aksoy','Yapay Zeka',31,47);
+INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Cem','Akbaşlı','Yapay Zeka',31,66);

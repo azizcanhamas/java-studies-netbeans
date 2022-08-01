@@ -181,6 +181,15 @@
                 ===> SET @autoid:=1;
                 ===> UPDATE notlar SET id=@autoid:=(@autoid+1);
                 ===> ALTER TABLE notlar AUTO_INCREMENT=1;
+    
+            * INNER JOIN, LEFT JOIN, RIGHT JOIN
+                ===>    personel tablosunu meslekler tablosu ile personsel tablosunun gorevKod ve meslekler
+                        tablosunun meslekID tablolarini baz alarak birlestir.
+                        ayni sekilde personel birimler tablosu personel tablosunun birimKod
+                        ve birimler tablosunun birimID tablosunu baz alarak birlestir.
+                        query="SELECT * FROM personel INNER JOIN meslekler ON personel.gorevKod=meslekler.meslekID "
+                         + "INNER JOIN birimler ON personel.birimKod=birimler.birimID "
+                        + "WHERE sicilNo="+sicilNo;
     -->
 </body>
 </html>

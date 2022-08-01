@@ -22,6 +22,8 @@ INSERT INTO notlar(ad,soyad,dersad,vize,final) VALUES ('Cem','Akbaşlı','Yapay 
 
 
 ==============================================================================
+
+
 CREATE TABLE personel(sicilNo INT(6) PRIMARY KEY NOT NULL,ad VARCHAR(50) NOT NULL,soyad VARCHAR(50) NOT NULL,birimKod INT(3) NOT NULL, gorevKod INT(2) NOT NULL,maas INT NOT NULL) (Hata olabilir, denenmedi.)
 INSERT INTO personel VALUES (347856,'Emir','Arık',354,45,6900);
 INSERT INTO personel VALUES (183222,'Yağız','Arıkan',854,65,75000);

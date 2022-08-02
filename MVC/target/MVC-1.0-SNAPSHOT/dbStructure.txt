@@ -1,0 +1,10 @@
+Database: magazam
+    
+    Table: yoneticiler
+        username : varchar(10) PrimaryKey
+        password : varchar(10)
+    
+    Table: uyeler
+        kullaniciAd : varchar(10) Primary Key
+        ad / soyad / il / ilce : varchar(50)
+        adres : varchar(255)

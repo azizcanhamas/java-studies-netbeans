@@ -61,7 +61,7 @@
     input{
         width: 97%;
         height:75%;
-        border-radius:  40px/40px;
+        border-radius:  10px/10px;
         border:3px solid black;
     }
     
@@ -72,17 +72,17 @@
     select{
         width:99%;
         height:60%;
-        border-radius:  40px/40px;
+        border-radius:  10px/10px;
         text-align:center;
         border: 3px solid black;
     }
     
     textarea{
-        width: 100%;
+        width: 95%;
         height: 100%;
         text-align: center;
         border: 3px solid black;
-        border-radius:  40px/40px;
+        border-radius:  10px/10px;
         resize:none;
     }
 </style>
@@ -119,7 +119,7 @@
                     </tr>
 
                     <tr>
-                        <td><textarea placeholder="İletişim Adresi"></textarea></td>
+                        <td><textarea placeholder="İletişim Adresi" maxlength="255"></textarea></td>
                     </tr>
 
                     <tr>

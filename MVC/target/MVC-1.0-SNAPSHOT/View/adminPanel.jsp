@@ -6,6 +6,12 @@
     <title>JSP Page</title>
 </head>
 
+<%@page import="java.io.InputStreamReader" %>
+<%@page import="java.io.FileInputStream" %>
+<%@page import="org.json.simple.parser.*"%>
+<%@page import="org.json.simple.*"%>
+<%@page import="java.io.IOException"%>
+
 <style>
     html{
         width:99%;
@@ -58,7 +64,7 @@
         text-align: center;
     }
 
-    input{
+    input,button{
         width: 97%;
         height:75%;
         border-radius:  10px/10px;
@@ -92,42 +98,65 @@
     
     <div id="container">
         <div id="form_div">
-            <form>
+            <form action="../Controller/uyeEkleController.jsp" method="get">
                 <table>
                     <tr>
                         <td colspan="8"><h3>Üye Takip Ekranı</h3></td>
                     </tr>
 
                     <tr>
-                        <td><input type="text" placeholder="Kullanıcı Adı"/></td>
+                        <td><input type="text" name="username" placeholder="Kullanıcı Adı" maxlength="10"/></td>
                     </tr>
 
                     <tr>
-                        <td><input type="text" placeholder="Adı"/></td>
+                        <td><input type="text" name="ad" placeholder="Adı"/></td>
                     </tr>
 
                     <tr>
-                        <td><input type="text" placeholder="Soyadı"/></td>
+                        <td><input type="text" name="soyad" placeholder="Soyadı"/></td>
                     </tr>
 
                     <tr>
-                        <td><select></select></td>
+                        <td>
+                            <select name="il">                                                                
+                            <%                             
+                                try(InputStreamReader file=new InputStreamReader(new FileInputStream("C:\\Users\\azuwin_user\\Documents\\NetBeansProjects\\MVC\\src\\main\\webapp\\iller-ilceler.json"),"utf-8")){
+                                    // Tum dosyanin parse edilmesi.
+                                    JSONParser parser=new JSONParser();
+                                    Object obj=parser.parse(file);
+
+                                    JSONArray jo_obj=(JSONArray)obj;
+                                    for (Object object : jo_obj) {
+                                        JSONObject jo=(JSONObject)object;
+                            %>
+                                        <option name="il" value="<%=jo.get("text")%>"><%=jo.get("text")%></option>
+                            <%                                            
+                                    }
+                                }catch(IOException ex){
+                                    out.print("ERROR: "+ex);
+                                } catch (ParseException ex) {
+                                    out.print("ERROR: "+ex);
+                                }
+                            %>  
+                            </select>
+                        </td>
                     </tr>
 
                     <tr>
-                        <td><select placeholder="ilce"></select></td>
-                    </tr>
-
-                    <tr>
-                        <td><textarea placeholder="İletişim Adresi" maxlength="255"></textarea></td>
+                        <td><textarea name="iletisimAdresi" placeholder="İletişim Adresi" maxlength="255"></textarea></td>
                     </tr>
 
                     <tr>
                         <td colspan="8"><input type="submit" value="Ekle"/></td>           
                     </tr>
+                    <tr>
+                        <td colspan="8"><button type="submit" formaction="uyeListele.jsp">Listele</button></td>           
+                    </tr>
                 </table>
+                               
             </form>
-        </div>   
+                 
+        </div>                      
     </div>
     
     

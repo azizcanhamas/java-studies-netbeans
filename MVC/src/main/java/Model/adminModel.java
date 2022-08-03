@@ -4,6 +4,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class adminModel extends dbConnect  {
+    public adminModel(){
+        super();
+    }
+
     //Sisteme admin olarak giris yapmis bir kullanicinin kendi "username"
     //bilgisini degistirmesi icin yazilmistir.
     public boolean adminUsernameGuncelle(String username,String newUsername){

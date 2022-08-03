@@ -15,7 +15,8 @@
             String password=request.getParameter("password");
             
             if (adm.adminMi(username, password)) {
-               response.sendRedirect("../View/adminPanel.jsp?status=true");
+                session.setAttribute("username", username);
+                response.sendRedirect("../View/adminPanel.jsp?status=true");
             }
             else{
                 response.sendRedirect("../View/adminLogin.jsp?status=false");

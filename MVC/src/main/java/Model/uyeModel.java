@@ -11,7 +11,11 @@ public class uyeModel extends dbConnect {
     private String ilce;
     private String adres;
 
-    public uyeModel(String kullaniciAdi, String ad, String soyad, String il, String ilce, String adres) {
+    public uyeModel(){
+        super();
+    }
+    
+    public uyeModel(String kullaniciAdi, String ad, String soyad, String il,String adres) {
         this.kullaniciAdi = kullaniciAdi;
         this.ad = ad;
         this.soyad = soyad;
@@ -20,21 +24,18 @@ public class uyeModel extends dbConnect {
         this.adres = adres;
     }
     
-    public boolean uyeEkle(String kullaniciAdi, String ad, String soyad, String il,String ilce, String adres){
-        query="INSERT INTO uyeler(kullaniciAdi,ad,soyad,il,ilce,adres) VALUES(?,?,?,?,?,?)";
+    public boolean uyeEkle(String kullaniciAdi, String ad, String soyad, String il, String adres){
+        query="INSERT INTO uyeler(kullaniciAdi,ad,soyad,il,adres) VALUES(?,?,?,?,?)";
         try{
             prepare=conn.prepareStatement(query);
             prepare.setString(1, kullaniciAdi);
             prepare.setString(2, ad);
             prepare.setString(3, soyad);
             prepare.setString(4, il);
-            prepare.setString(5, ilce);
             prepare.setString(5, adres);
             prepare.executeUpdate();
-            prepare.close();
-            conn.close();
             return true;
-        }catch(SQLException e){return false;}       
+        }catch(SQLException e){System.out.println(e);return false;}       
     }
     
     // uyeBilgileriGuncelle metodu cagrilmadan once
@@ -56,47 +57,68 @@ public class uyeModel extends dbConnect {
     }
    
    public boolean uyeSil(String uyeKullaniciAdi){
-       query="DELETE FROM uyeler WHERE kullaniciAd="+uyeKullaniciAdi;
+       query="DELETE FROM uyeler WHERE kullaniciAdi='"+uyeKullaniciAdi+"'";
        try{
            state=conn.createStatement();
            state.executeUpdate(query);
-           state.close();
-           conn.close();
            return true;
-       }catch(SQLException e){return false;}
+       }catch(SQLException e){System.out.println(e);return false;}
    }
    
    public boolean uyeMi(String username){
-        query="SELECT * FROM uyeler WHERE username='"+username+"'";
+        query="SELECT * FROM uyeler WHERE kullaniciAdi='"+username+"'";
         try{
             state=conn.createStatement();
             set=state.executeQuery(query);
             set.next();
-            if (username.equals(set.getString("username")))
+            if (username.equals(set.getString("kullaniciAdi")))
                 return true;
             else return false;           
         }catch(SQLException e){return false;}
     }
    
    public ArrayList<ArrayList<String>> getUyeler(){
+        //Alinan bir hata: state ve connection close edildigi icin
+        //uyeListele sayfasi refresh edildiginde NullPointerException aliniyordu.
+        //Hata gozlemlenemediginden errorList ile return edildi. Hatanin baglantinin
+        //kapatildigindan dolayi oldugu gozlemlendi. Baglantiyi kapatmayinca sorun cozuldu!
         query="SELECT * FROM uyeler";
+        ArrayList<ArrayList<String>>baseList=new ArrayList<>();
         try{
             state=conn.createStatement();
-            set=state.executeQuery(query);          
-            ArrayList<ArrayList<String>>baseList=new ArrayList<>();
+            set=state.executeQuery(query);                      
             while (set.next()) {
                 ArrayList<String>subList=new ArrayList<String>();
                 subList.add(set.getString("kullaniciAdi"));
                 subList.add(set.getString("ad"));
                 subList.add(set.getString("soyad"));
                 subList.add(set.getString("il"));
-                subList.add(set.getString("ilce"));
                 subList.add(set.getString("adres"));
                 baseList.add(subList);
             }
-            state.close();
-            conn.close();
             return baseList;
-        }catch(SQLException e){return null;}       
+        }catch(SQLException e){
+            ArrayList<String>errorList=new ArrayList<String>();
+            errorList.add(e.toString());
+            baseList.add(errorList);
+            return baseList;}       
     }
+   
+   public ArrayList<String> getUye(String username){
+       query="SELECT * FROM uyeler WHERE='"+username+"'";
+       ArrayList<String>list=new ArrayList<String>();
+       try{
+           state=conn.createStatement();
+           state.executeQuery(query);
+           while (set.next()) {
+               list.add(set.getString("kullaniciAdi"));
+               list.add(set.getString("ad"));
+               list.add(set.getString("soyad"));
+               list.add(set.getString("il"));
+               list.add(set.getString("adres"));
+           }
+           return list;
+       }catch(SQLException e){return null;}
+   }
+   
 }

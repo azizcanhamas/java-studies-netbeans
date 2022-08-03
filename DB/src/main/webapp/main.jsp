@@ -190,6 +190,9 @@
                         query="SELECT * FROM personel INNER JOIN meslekler ON personel.gorevKod=meslekler.meslekID "
                          + "INNER JOIN birimler ON personel.birimKod=birimler.birimID "
                         + "WHERE sicilNo="+sicilNo;
+
+            * ALTER TABLE uyeler DROP COLUMN ilce
+                ===> uyeler tablosu uzerinde degisiklik yap, ilce sutununu sil.
     -->
 </body>
 </html>

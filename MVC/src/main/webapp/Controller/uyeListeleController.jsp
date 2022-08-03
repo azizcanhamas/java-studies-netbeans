@@ -7,24 +7,18 @@
 </head>
 <body>
 
-    <%@page import="Model.dbConnect"%>
     <%@page import="Model.uyeModel"%>
     <%@page import="java.util.ArrayList"%>
     
-    <%!        
-        uyeModel uyeModelObject=new uyeModel();
+    <%!              
         public ArrayList<ArrayList<String>> getDatas(){
+            uyeModel uyeModelObject=new uyeModel();
             return uyeModelObject.getUyeler();      
         }
     %>
     
     <%
-        if(session.getAttribute("username")==null)response.sendRedirect("../View/adminLogin.jsp");
-        else{
-            dbConnect d=new dbConnect();
-            uyeModel obj=new uyeModel();
-            ArrayList<ArrayList<String>> list=obj.getUyeler();           
-        }       
+        if(session.getAttribute("username")==null)response.sendRedirect("../View/adminLogin.jsp");      
     %>
 
 </body>

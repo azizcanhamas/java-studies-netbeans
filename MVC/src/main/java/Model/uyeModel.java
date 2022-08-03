@@ -1,32 +1,28 @@
 package Model;
 
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-public class uyeModel extends dbConnect {
-    private String kullaniciAdi;
-    private String ad;
-    private String soyad;
-    private String il;
-    private String ilce;
-    private String adres;
+public class uyeModel{    
+    private String username="root";
+    private String password="";    
 
-    public uyeModel(){
-        super();
-    }
+    private String query="";
+    private Statement state;
+    private PreparedStatement prepare;
+    private ResultSet set;
+    private Connection conn;
     
-    public uyeModel(String kullaniciAdi, String ad, String soyad, String il,String adres) {
-        this.kullaniciAdi = kullaniciAdi;
-        this.ad = ad;
-        this.soyad = soyad;
-        this.il = il;
-        this.ilce = ilce;
-        this.adres = adres;
-    }
-    
-    public boolean uyeEkle(String kullaniciAdi, String ad, String soyad, String il, String adres){
+    public boolean uyeEkle(String kullaniciAdi, String ad, String soyad, String il, String adres){   
         query="INSERT INTO uyeler(kullaniciAdi,ad,soyad,il,adres) VALUES(?,?,?,?,?)";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             prepare=conn.prepareStatement(query);
             prepare.setString(1, kullaniciAdi);
             prepare.setString(2, ad);
@@ -41,24 +37,28 @@ public class uyeModel extends dbConnect {
     // uyeBilgileriGuncelle metodu cagrilmadan once
     //"Uye Guncelle" formunda yeni bilgiler ile bir uye nesnesi olusturulur.
     //Bu metod cagrilirken Session'da tutulan kullanici adi gonderilmeli.
-    public boolean uyeBilgileriGuncelle(String eskiKullaniciAdi){ 
-        query="UPDATE uyeler SET kullaniciAd=? ad=? soyad=? il=? ilce=? adres=? WHERE kullaniciAd=?";
+    public boolean uyeBilgileriGuncelle(String eskiKullaniciAdi,String kullaniciAdi,String ad,String soyad,String il,String adres){ 
+        query="UPDATE uyeler SET kullaniciAdi=?,ad=?,soyad=?,il=?,adres=? WHERE kullaniciAdi=?";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             prepare=conn.prepareStatement(query);
             prepare.setString(1, kullaniciAdi);
             prepare.setString(2, ad);
             prepare.setString(3, soyad);
             prepare.setString(4, il);
-            prepare.setString(5, ilce);
-            prepare.setString(6, adres);
-            prepare.setString(7, eskiKullaniciAdi);
+            prepare.setString(5, adres);
+            prepare.setString(6, eskiKullaniciAdi);
+            prepare.executeUpdate();
             return true;
-        }catch(SQLException e){return false;}
+        }catch(SQLException e){System.out.println(e);return false;}
     }
    
    public boolean uyeSil(String uyeKullaniciAdi){
        query="DELETE FROM uyeler WHERE kullaniciAdi='"+uyeKullaniciAdi+"'";
        try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
            state=conn.createStatement();
            state.executeUpdate(query);
            return true;
@@ -68,6 +68,8 @@ public class uyeModel extends dbConnect {
    public boolean uyeMi(String username){
         query="SELECT * FROM uyeler WHERE kullaniciAdi='"+username+"'";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             state=conn.createStatement();
             set=state.executeQuery(query);
             set.next();
@@ -85,10 +87,14 @@ public class uyeModel extends dbConnect {
         query="SELECT * FROM uyeler";
         ArrayList<ArrayList<String>>baseList=new ArrayList<>();
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");          
             state=conn.createStatement();
             set=state.executeQuery(query);                      
             while (set.next()) {
-                ArrayList<String>subList=new ArrayList<String>();
+                ArrayList<String>subList=new ArrayList<>();
                 subList.add(set.getString("kullaniciAdi"));
                 subList.add(set.getString("ad"));
                 subList.add(set.getString("soyad"));
@@ -96,20 +102,25 @@ public class uyeModel extends dbConnect {
                 subList.add(set.getString("adres"));
                 baseList.add(subList);
             }
+            state.close();
+            conn.close();
             return baseList;
         }catch(SQLException e){
             ArrayList<String>errorList=new ArrayList<String>();
             errorList.add(e.toString());
             baseList.add(errorList);
-            return baseList;}       
+            return baseList;
+        }       
     }
    
    public ArrayList<String> getUye(String username){
-       query="SELECT * FROM uyeler WHERE='"+username+"'";
-       ArrayList<String>list=new ArrayList<String>();
+       query="SELECT * FROM uyeler WHERE kullaniciAdi='"+username+"'";
+       ArrayList<String>list=new ArrayList<>();
        try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
            state=conn.createStatement();
-           state.executeQuery(query);
+           set=state.executeQuery(query);
            while (set.next()) {
                list.add(set.getString("kullaniciAdi"));
                list.add(set.getString("ad"));
@@ -117,8 +128,20 @@ public class uyeModel extends dbConnect {
                list.add(set.getString("il"));
                list.add(set.getString("adres"));
            }
+           state.close();
+           conn.close();
            return list;
-       }catch(SQLException e){return null;}
+       }catch(SQLException e){
+           System.out.println(e);
+           ArrayList<String> errorList=new ArrayList<>();
+           errorList.add(e.toString());
+           return errorList;
+        }
    }
+   
+    public static void main(String[] args) {
+        uyeModel m=new uyeModel();
+        System.out.println(m.uyeBilgileriGuncelle("azizcanha","azizcan", "Aziz Can", "Hamasoglu", "KONYA", "MERKEZ"));
+    }
    
 }

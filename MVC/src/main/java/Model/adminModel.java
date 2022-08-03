@@ -1,18 +1,31 @@
 package Model;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
-public class adminModel extends dbConnect  {
-    public adminModel(){
-        super();
-    }
+public class adminModel{
+    
+    private String username="root";
+    private String password=""; 
+    
+    public String query="";
+    public Statement state;
+    public PreparedStatement prepare;
+    public ResultSet set;
+    public Connection conn;
 
     //Sisteme admin olarak giris yapmis bir kullanicinin kendi "username"
     //bilgisini degistirmesi icin yazilmistir.
     public boolean adminUsernameGuncelle(String username,String newUsername){
         query="UPDATE yoneticiler SET username='"+newUsername+"' WHERE username='"+username+"'";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             state=conn.createStatement();
             state.executeUpdate(query);
             state.close();
@@ -26,6 +39,8 @@ public class adminModel extends dbConnect  {
     public boolean adminPasswordGuncelle(String username,String newPassword){
         query="UPDATE yoneticiler SET password='"+newPassword+"' WHERE username='"+username+"'";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             state=conn.createStatement();
             state.executeUpdate(query);
             state.close();
@@ -39,6 +54,8 @@ public class adminModel extends dbConnect  {
     public ArrayList<ArrayList<String>> getAdmins(){
         query="SELECT * FROM yoneticiler";
         try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             state=conn.createStatement();
             set=state.executeQuery(query);          
             ArrayList<ArrayList<String>>baseList=new ArrayList<>();
@@ -58,7 +75,9 @@ public class adminModel extends dbConnect  {
     //tablosunda kontrol edilme islemi icin yazilmistir.
     public boolean adminMi(String username,String parola){
         query="SELECT * FROM yoneticiler WHERE username='"+username+"'";
-        try{   
+        try{
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/magazam?" +
+                                   "user=root&password=");
             state=conn.createStatement();
             set=state.executeQuery(query);
             set.next();
@@ -67,4 +86,5 @@ public class adminModel extends dbConnect  {
             else return false;           
         }catch(SQLException e){return false;}
     }
+
 }

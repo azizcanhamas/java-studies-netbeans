@@ -7,7 +7,6 @@
 </head>
 
 <%@include file="../Controller/uyeListeleController.jsp" %>
-
 <style>
     html{
             width:99%;
@@ -108,12 +107,13 @@
                         <%
                                     }
                         %>
-                                    <td><button name="guncelle" value="<%=username%>" formaction="uyeGuncelleController.jsp?">Güncelle</button></td>
+                                    <td><button name="guncelle" value="<%=username%>" formaction="uyeGuncelle.jsp?">Güncelle</button></td>
                                     <td><button name="sil" value="<%=username%>" formaction="../Controller/uyeSilController.jsp?">Sil</button></td>
                                 </tr>
                         <%
                             }
                         %>
+                        
                 </table>                              
             </form>
         </div>                      

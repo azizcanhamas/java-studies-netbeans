@@ -102,6 +102,11 @@
     }        
 </style>
 
+<%@include file="../Controller/uyeGuncelleController.jsp" %>
+<%  
+    ArrayList<String>datas=getUye(request.getParameter("guncelle"));
+%>
+
 <body>
     <div id="container">
         <div id="form_div">
@@ -109,33 +114,30 @@
                 <table border="2">
                     <tr>
                         <th colspan="8">Üye Güncelle Ekranı</th>
-                    </tr>
-                    
-                    
+                    </tr>             
                     <tr>
                         <td colspan="1">Kullanıcı Adı</td>
-                        <td colspan="7"><input type="text" name="yeniKullaniciAdi"/></td>
+                        <td colspan="7"><input type="text" name="yeniKullaniciAdi" value="<%=datas.get(0).toString()%>"/></td>
                     </tr>
                     
                     <tr>
                         <td>Üye Adı</td>
-                        <td colspan="7"><input type="text" name="ad"/></td>
+                        <td colspan="7"><input type="text" name="ad" value="<%=datas.get(1).toString()%>"/>
+                           
+                        </td>
                     </tr>
                     
                     <tr>
                         <td>Üye Soyadı</td>
-                        <td colspan="7"><input type="text" name="soyad"/></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Üye Soyadı</td>
-                        <td colspan="7"><input type="text" name="uyeSoyadi"/></td>
+                        <td colspan="7"><input type="text" name="soyad" value="<%=datas.get(2).toString()%>"/></td>
                     </tr>
                     
                     <tr>
                         <td>Üye İl</td>
                         <td colspan="7">
-                            <select name="il">                                                                
+                            <select name="il">
+                                
+                                <option name="il" value="<%=datas.get(3).toString()%>"><%=datas.get(3).toString()%></option>
                             <%                             
                                 try(InputStreamReader file=new InputStreamReader(new FileInputStream("C:\\Users\\azuwin_user\\Documents\\NetBeansProjects\\MVC\\src\\main\\webapp\\iller-ilceler.json"),"utf-8")){
                                     // Tum dosyanin parse edilmesi.
@@ -161,10 +163,10 @@
                     
                     <tr>
                         <td>İletişim Adresi</td>
-                        <td colspan="7"><textarea rows="10" cols="50"></textarea></td>
+                        <td colspan="7"><textarea name="iletisimAdresi" rows="10" cols="50"><%=datas.get(4).toString()%></textarea></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><button formaction="../Controller/uyeGuncelleController.jsp" name="guncelle" value="<%=request.getParameter("guncelle")%>">Güncelle</button></td> <!--eski kullanıcı unutulmamalı-->
+                        <td colspan="2"><button formaction="../Controller/uyeGuncelleController.jsp" name="eskiKullaniciAdi" value="<%=request.getParameter("guncelle")%>">Güncelle</button></td> <!--eski kullanıcı unutulmamalı-->
                         
                         <td colspan="2"><button formaction="adminPanel.jsp">Anasayfaya Git</button></td>
                         

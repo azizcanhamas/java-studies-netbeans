@@ -8,9 +8,13 @@
 <body>
       
     <%@page import="Model.adminModel" %>
+    <%!
+        adminModel adm=new adminModel();
+    %>
+    
         <%
             Class.forName("com.mysql.jdbc.Driver");
-            adminModel adm=new adminModel();
+            
             String username=request.getParameter("username");
             String password=request.getParameter("password");
             

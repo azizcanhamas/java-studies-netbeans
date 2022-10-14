@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <input type="text" id="birincisayi" placeholder="Birinci değer"/><br>
+        <input type="text" id="ikincisayi" placeholder="İkinci değer"/><br><br>
+        <label>Lütfen işlem seçiniz: </label><br>
+        <label for="toplama">Toplama</label>
+        <input type="checkbox" id="toplama"><br>
+        <label for="cikarma">Çıkarma</label>
+        <input type="checkbox" id="cikarma"><br>
+        <label for="carpma">Çarpma</label>
+        <input type="checkbox" id="carpma"><br>
+        <label for="bolme">Bölme</label>
+        <input type="checkbox" id="bolme"><br>
+        <input type="button" onclick="hesapla()" value="Hesapla"><br><br>
+
+        <input type="text" id="sonuc"  placeholder="Sonuç">
+
+    </body>
+    
+    <script>
+        function hesapla(){
+            var birincisayi=document.getElementById("birincisayi");
+            var ikincisayi=document.getElementById("ikincisayi");
+        
+            var toplama=document.getElementById("toplama");
+            var cikarma=document.getElementById("cikarma");
+            var carpma=document.getElementById("carpma");
+            var bolme=document.getElementById("bolme");
+            
+            var sonuc=document.getElementById("sonuc");
+            sonuc.value="";
+      
+      
+            if((toplama.checked||cikarma.checked||carpma.checked||bolme.checked) && birincisayi.value===""){
+                alert("Lütfen birinci değeri girin.");
+            }           
+            else if((toplama.checked || cikarma.checked || carpma.checked || bolme.checked) && birincisayi.value!=="" && ikincisayi.value===""){
+                alert("Lütfen ikinci değeri girin.");
+            }
+            else if(!toplama.checked && !cikarma.checked && !carpma.checked && !bolme.checked){
+                alert("Lütfen bir işlem türü seçiniz.");
+            }
+            else if(bolme.checked && ikincisayi.value==="0"){
+                alert("Lütfen bölme işlemi için ikinci değeri 0 girmeyiniz.");
+            }
+            else{
+                if(toplama.checked){
+                    var t=parseFloat(birincisayi.value)+parseFloat(ikincisayi.value);
+                    sonuc.value=sonuc.value+"Toplama: "+t+" ";
+                }
+                if(cikarma.checked){
+                    var c=parseFloat(birincisayi.value)-parseFloat(ikincisayi.value);
+                    sonuc.value=sonuc.value+"Cikarma "+c+" ";
+                }
+                if(carpma.checked){
+                    var carp=parseFloat(birincisayi.value)*parseFloat(ikincisayi.value);
+                    sonuc.value=sonuc.value+"Carpma: "+carp+" ";
+                }
+                if(bolme.checked){
+                    var b=parseFloat(birincisayi.value)/parseFloat(ikincisayi.value);
+                    sonuc.value=sonuc.value+"Bolme: "+b+" ";
+                }
+            }
+        
+        }
+        
+    </script>
+</html>

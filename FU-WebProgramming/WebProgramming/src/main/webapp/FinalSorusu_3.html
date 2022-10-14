@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <label for="giris">Kuruluş Adı: </label>
+        <input type="text" id="giris" name="giris" onfocus="setGray()" onfocusout="setWhite()" onkeypress="toUpper()">
+
+    </body>
+    
+    
+    <script>
+    
+        var giris=document.getElementById("giris");
+    
+        function setGray(){
+            giris.style.backgroundColor="gray";
+        }
+        
+        function setWhite(){
+            giris.style.backgroundColor="white";
+        }
+        
+        function toUpper(){
+            let text=giris.value;
+            giris.value=text.toUpperCase();
+        }
+    
+    </script>
+</html>

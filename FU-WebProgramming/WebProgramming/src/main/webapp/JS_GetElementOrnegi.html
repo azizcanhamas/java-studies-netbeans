@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function gonder(){
+                //Javascript ile bir alandaki verinin alinmasi
+                var isim=document.getElementById("isim").value;
+                var bilet=document.getElementById("bilet").value;
+                document.getElementById("result").innerHTML=isim+"   "+bilet;
+            }
+        </script>
+
+    </head>
+    <body>
+        <label for="isim">İsim: </label>
+        <input type="text" name="isim" id="isim"><br>
+        <label for="bilet">Bilet: </label>
+        <input type="text" name="bilet" id="bilet"><br>
+        <!--Butona tiklandigi zaman Javascript metodu cagrilacaktir-->
+        <input type="button" value="Gonder" onclick="gonder()">
+        
+        <p id="result">
+            
+        </p>
+    </body>
+</html>
